@@ -1,0 +1,46 @@
+@host = localhost:5119
+
+### Get all distributions
+GET {{host}}/distributions/
+Accept: application/json
+
+### Get distribution by id
+GET {{host}}/distributions/4c11edd7-fe37-4528-8a1c-4571b26f60f8
+Accept: application/json
+
+### Create distribution
+POST {{host}}/distributions
+Content-Type: application/json
+
+{
+    "creator":"Judd Vinet",
+    "name":"Arch Linux",
+    "dateofbirth":"2004-02-19",
+    "webpageurl":"https://archlinux.org"
+}
+
+### Create distribution
+POST {{host}}/distributions
+Content-Type: application/json
+
+{
+    "Creator":"Debianner",
+    "Name":"Debian",
+    "DateOfBirth":"2003-12-19",
+    "WebPageURL":"https://debian.org"
+}
+
+### Update distribution
+PUT {{host}}/distributions/4c11edd7-fe37-4528-8a1c-4571b26f60f8
+Content-Type: application/json
+
+{
+    "Creator":"Morten Linderud",
+    "Name":"NewerDistro",
+    "DateOfBirth":"2020-02-01",
+    "WebPageURL":"https://example.com"
+}
+
+### Delete user
+DELETE {{host}}/distributions/4c11edd7-fe37-4528-8a1c-4571b26f60f8
+Accept: application/json
